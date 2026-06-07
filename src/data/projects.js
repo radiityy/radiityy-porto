@@ -16,7 +16,7 @@ export const projects = [
       "REST API for managing student daily habit journals, validation flow, recap reports, and role-based access for students, parents, teachers, and admins.",
     stack: ["Laravel", "Sanctum", "Swagger", "MySQL"],
     status: "Backend Project",
-    repo: "#",
+    repo: "https://github.com/radiityy/journal-7kaih",
     live: "#",
   },
   {
@@ -26,7 +26,7 @@ export const projects = [
       "A modern URL shortener project with the tagline 'Make long links less annoying', designed for clean link management and public profile sharing.",
     stack: ["React", "Node.js", "Express", "Tailwind CSS"],
     status: "Personal Project",
-    repo: "#",
+    repo: "https://github.com/radiityy/url-shortener",
     live: "#",
   },
 ];

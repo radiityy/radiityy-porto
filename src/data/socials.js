@@ -11,13 +11,13 @@ export const socials = [
   {
     label: "Instagram",
     value: "@radiityy",
-    href: "https://instagram.com/radiityy",
+    href: "https://instagram.com/adyneee",
     icon: FaInstagram,
   },
   {
     label: "LinkedIn",
-    value: "Connect with me",
-    href: "#",
+    value: "Raditya Adin Nugroho",
+    href: "https://www.linkedin.com/in/raditya-adin-nugroho-3a16aa3bb/",
     icon: FaLinkedinIn,
   },
   {
