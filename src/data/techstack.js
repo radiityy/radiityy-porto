@@ -21,7 +21,7 @@ export const techStack = [
     items: [
       { name: "React", icon: FaReact },
       { name: "Next.js", icon: SiNextdotjs },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Tailwind", icon: SiTailwindcss },
       { name: "HTML", icon: FaHtml5 },
       { name: "CSS", icon: FaCss3Alt },
     ],
@@ -30,7 +30,7 @@ export const techStack = [
     category: "Backend",
     items: [
       { name: "Node.js", icon: FaNodeJs },
-      { name: "Express.js", icon: SiExpress },
+      { name: "Express", icon: SiExpress },
     ],
   },
   {
