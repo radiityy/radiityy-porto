@@ -65,7 +65,7 @@ export default function HeroSection() {
               <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-[#e5cda9] bg-[#efd09d] text-xl font-extrabold text-[#8b5b20] sm:h-16 sm:w-16 sm:text-2xl lg:h-20 lg:w-20">
                 {!photoError ? (
                   <Image
-                    src="/photo.jpg"
+                    src="/adyneee.jpeg"
                     alt="Foto Radiit"
                     width={80}
                     height={80}
