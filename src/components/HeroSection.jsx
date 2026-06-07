@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 import { projects } from "@/data/projects";
 
 const taglines = [
-  "Mahasiswa · Web Developer · Purworejo",
+  "Mahasiswa · Web Developer · Based On Purworejo",
   "Backend-leaning full-stack developer",
   "Building things from scratch",
 ];
@@ -91,7 +91,7 @@ export default function HeroSection() {
               </span>
 
               <h1 className="mt-2 font-display text-[23px] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#2b2118] sm:text-[26px] lg:text-[32px]">
-                Halo, saya Radiit.
+                Halo, saya Radit.
               </h1>
             </div>
           </div>

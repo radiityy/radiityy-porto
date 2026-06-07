@@ -12,7 +12,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "radiityy — Portfolio",
+  title: "Raditya Adin Nugroho - Web Developer",
   description:
     "Personal portfolio website of radiityy, showcasing projects, tech stack, and web development journey.",
 };

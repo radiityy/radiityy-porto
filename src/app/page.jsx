@@ -32,7 +32,7 @@ function Navbar() {
       </a>
 
       <nav className="flex items-center gap-3 text-[10px] font-semibold text-[#7b644b]">
-        <a className="transition hover:text-[#2b2118]" href="#hero">
+        <a className="transition hover:text-[#2b2118]" href="#home">
           Home
         </a>
         <a className="transition hover:text-[#2b2118]" href="#projects">
