@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
+import ProjectsSection from "@/components/ProjectsSection";
 
 function BrowserFrame({ children }) {
   return (
@@ -58,6 +59,7 @@ export default function Home() {
         <BrowserFrame>
           <Navbar />
           <HeroSection />
+          <ProjectsSection />
         </BrowserFrame>
       </motion.section>
     </main>
