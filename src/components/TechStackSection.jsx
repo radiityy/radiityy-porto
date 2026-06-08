@@ -3,6 +3,16 @@
 import { motion } from "framer-motion";
 import { techStack } from "@/data/techstack";
 
+function IconFallback({ name }) {
+  const abbr = name.length <= 4 ? name : name.slice(0, 2).toUpperCase();
+
+  return (
+    <span className="text-[10px] font-black tracking-tight text-[#80551c]">
+      {abbr}
+    </span>
+  );
+}
+
 export default function TechStackSection() {
   return (
     <section id="stack" className="border-t border-[#ead8bd] px-4 py-5 sm:px-5">
@@ -36,9 +46,16 @@ export default function TechStackSection() {
                 return (
                   <div
                     key={item.name}
-                    className="rounded-xl border border-[#e0c49c] bg-[#fffaf1] p-3 transition hover:-translate-y-0.5 hover:bg-[#fff4d9]"
+                    className="flex flex-col rounded-xl border border-[#e0c49c] bg-[#fffaf1] p-3 transition hover:-translate-y-0.5 hover:bg-[#fff4d9]"
                   >
-                    <Icon className="text-[20px] text-[#80551c]" />
+                    <div className="flex h-5 w-5 items-center justify-center">
+                      {Icon ? (
+                        <Icon className="text-[20px] text-[#80551c]" />
+                      ) : (
+                        <IconFallback name={item.name} />
+                      )}
+                    </div>
+
                     <p className="mt-2 text-[10px] font-bold tracking-[-0.02em]">
                       {item.name}
                     </p>

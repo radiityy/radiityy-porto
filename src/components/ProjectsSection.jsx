@@ -1,15 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import { projects } from "@/data/projects";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="border-t border-[#ead8bd] px-4 py-5 sm:px-5">
+    <section
+      id="projects"
+      className="border-t border-[#ead8bd] px-4 py-5 sm:px-5"
+    >
       <div className="flex items-center justify-between gap-4">
         <h2 className="text-[13px] font-extrabold tracking-[-0.03em]">
           Selected Projects
         </h2>
+
         <span className="text-[9px] font-semibold text-[#9a7b57]">
           {projects.length} projects
         </span>
@@ -17,16 +22,13 @@ export default function ProjectsSection() {
 
       <div className="mt-4 grid gap-3">
         {projects.map((project, index) => (
-          <motion.a
+          <motion.article
             key={project.title}
-            href={project.repo !== "#" ? project.repo : project.live}
-            target="_blank"
-            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.06 }}
-            className="group block rounded-xl border border-[#d8ad72] bg-[#fff5df] p-4 transition hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(93,65,32,0.1)]"
+            className="group rounded-xl border border-[#d8ad72] bg-[#fff5df] p-4 transition hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(93,65,32,0.1)]"
           >
             <div className="flex items-start justify-between gap-3">
               <div>
@@ -59,20 +61,30 @@ export default function ProjectsSection() {
               ))}
             </div>
 
-            <div className="mt-4 flex items-center gap-3 border-t border-[#e5cda9] pt-3">
+            <div className="mt-4 flex items-center gap-2 border-t border-[#e5cda9] pt-3">
               {project.repo !== "#" && (
-                <span className="text-[10px] font-bold text-[#9a7b57] transition group-hover:text-[#2b2118]">
-                  GitHub →
-                </span>
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-[#c9a372] bg-[#fffaf1] px-3 py-1.5 text-[10px] font-bold text-[#7a5b36] transition hover:bg-[#2b2118] hover:text-white"
+                >
+                  GitHub
+                </a>
               )}
 
               {project.live !== "#" && (
-                <span className="text-[10px] font-bold text-[#9a7b57] transition group-hover:text-[#2b2118]">
-                  Live ↗
-                </span>
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-[#2b2118] bg-[#2b2118] px-3 py-1.5 text-[10px] font-bold text-white transition hover:bg-[#3a2a1f]"
+                >
+                  Live
+                </a>
               )}
             </div>
-          </motion.a>
+          </motion.article>
         ))}
       </div>
     </section>

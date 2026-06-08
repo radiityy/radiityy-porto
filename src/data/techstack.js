@@ -6,7 +6,6 @@ import {
   FaFigma,
   FaHtml5,
   FaCss3Alt,
-  FaCode,
   FaServer,
 } from "react-icons/fa";
 
@@ -22,33 +21,40 @@ import {
   SiMysql,
   SiPostman,
   SiGo,
+  SiSwagger,
 } from "react-icons/si";
+
+// Note: Some tech (Inertia.js, Gin, GORM, JWT, Sanctum, Filament) don't have
+// icons in react-icons. We use icon: null and render a text fallback instead.
 
 export const techStack = [
   {
     category: "Frontend",
     items: [
-      { name: "HTML", icon: FaHtml5 },
-      { name: "CSS", icon: FaCss3Alt },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "React", icon: FaReact },
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "Vue.js", icon: SiVuedotjs },
+      { name: "HTML",         icon: FaHtml5 },
+      { name: "CSS",          icon: FaCss3Alt },
+      { name: "JavaScript",   icon: SiJavascript },
+      { name: "React",        icon: FaReact },
+      { name: "Next.js",      icon: SiNextdotjs },
+      { name: "Vue.js",       icon: SiVuedotjs },
       { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "Inertia.js", icon: FaCode },
+      { name: "Inertia.js",   icon: null },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "PHP", icon: SiPhp },
-      { name: "Laravel", icon: SiLaravel },
-      { name: "Node.js", icon: FaNodeJs },
+      { name: "PHP",        icon: SiPhp },
+      { name: "Laravel",    icon: SiLaravel },
+      { name: "Node.js",    icon: FaNodeJs },
       { name: "Express.js", icon: SiExpress },
-      { name: "Go", icon: SiGo },
-      { name: "REST API", icon: FaServer },
-      { name: "Sanctum", icon: FaCode },
-      { name: "Swagger", icon: FaCode },
+      { name: "Go",         icon: SiGo },
+      { name: "Gin",        icon: null },
+      { name: "GORM",       icon: null },
+      { name: "REST API",   icon: FaServer },
+      { name: "JWT",        icon: null },
+      { name: "Sanctum",    icon: null },
+      { name: "Filament",   icon: null },
     ],
   },
   {
@@ -60,11 +66,12 @@ export const techStack = [
   {
     category: "Tools & Deploy",
     items: [
-      { name: "Git", icon: FaGitAlt },
-      { name: "GitHub", icon: FaGithub },
-      { name: "Vercel", icon: SiVercel },
+      { name: "Git",     icon: FaGitAlt },
+      { name: "GitHub",  icon: FaGithub },
+      { name: "Vercel",  icon: SiVercel },
       { name: "Postman", icon: SiPostman },
-      { name: "Figma", icon: FaFigma },
+      { name: "Swagger", icon: SiSwagger },
+      { name: "Figma",   icon: FaFigma },
     ],
   },
 ];

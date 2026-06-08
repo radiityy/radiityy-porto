@@ -18,8 +18,7 @@ export default function ContactSection() {
 
       <div className="mt-4 rounded-xl border border-[#d8ad72] bg-[#fffaf1] p-4">
         <p className="text-[12px] leading-[1.75] text-[#5f4b36]">
-          Terbuka untuk diskusi project, kolaborasi, atau sekadar ngobrol soal
-          web development dan proses belajar membangun produk digital.
+          Have an idea, a project, or just want to connect? I’m always open to a good conversation.
         </p>
       </div>
 
@@ -56,7 +55,7 @@ export default function ContactSection() {
       </div>
 
       <p className="mt-5 border-t border-[#ead8bd] pt-4 text-center text-[10px] font-medium text-[#8a7358]">
-        © 2026 radiityy. Built with Next.js, Tailwind CSS, and Vercel.
+        © 2026 radiityy.
       </p>
     </section>
   );

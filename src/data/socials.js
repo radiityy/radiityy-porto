@@ -20,10 +20,4 @@ export const socials = [
     href: "https://www.linkedin.com/in/raditya-adin-nugroho-3a16aa3bb/",
     icon: FaLinkedinIn,
   },
-  {
-    label: "Email",
-    value: "radityaadin204@gmail.com",
-    href: "mailto:radityaadin204@gmail.com",
-    icon: MdEmail,
-  },
 ];
