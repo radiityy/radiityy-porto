@@ -23,7 +23,7 @@ export const projects = [
       "A student habit journal system designed to help students record daily activities, while teachers and parents can review, validate, and monitor their progress through recap reports.",
     stack: ["Laravel", "Sanctum", "MySQL", "Swagger"],
     status: "Education System",
-    repo: "https://github.com/radiityy/jurnal-7kaih",
+    repo: "https://github.com/fajrdyt/journal-7kaih",
     live: "#",
   },
   {

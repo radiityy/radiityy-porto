@@ -87,7 +87,7 @@ export default function HeroSection() {
             <div className="min-w-0 flex-1">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e6b65f] bg-[#fff3cf] px-2.5 py-1 text-[9px] font-bold text-[#b27600]">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#d4a017]" />
-                READY TO HIRE
+                OPEN TO OPPORTUNITIES
               </span>
 
               <h1 className="mt-2 font-display text-[23px] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#2b2118] sm:text-[26px] lg:text-[32px]">
