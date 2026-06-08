@@ -10,7 +10,7 @@ export const socials = [
   },
   {
     label: "Instagram",
-    value: "@radiityy",
+    value: "@adyneee",
     href: "https://instagram.com/adyneee",
     icon: FaInstagram,
   },
