@@ -1,30 +1,17 @@
-import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import LenisProvider from "@/components/LenisProvider";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  title: "Raditya Adin Nugroho - Web Developer",
-  description:
-    "Personal portfolio website of radiityy, showcasing projects, tech stack, and web development journey.",
+  title: "radiityy.",
+  description: "Personal portfolio website by Raditya Adin Nugroho.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id">
-      <body className={`${inter.variable} ${playfair.variable}`}>
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+    <html lang="en">
+      <body>
+        <Navbar />
+        {children}
       </body>
     </html>
   );
