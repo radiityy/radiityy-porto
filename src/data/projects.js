@@ -8,10 +8,31 @@ export const projects = [
       "An online shopping website where users can browse products, manage their cart, and go through a structured shopping flow. It also includes an admin panel for managing products, orders, and store content.",
     details:
       "NEVERENDING is a fullstack e-commerce project built with Laravel, Inertia.js, Vue.js, Tailwind CSS, MySQL, and Filament. The project focuses on product management, cart flow, checkout process, and admin-side content management.",
-    stack: ["Laravel", "Inertia.js", "Vue.js", "Tailwind CSS", "MySQL", "Filament"],
+    stack: [
+      "Laravel",
+      "Inertia.js",
+      "Vue.js",
+      "Tailwind CSS",
+      "MySQL",
+      "Filament",
+    ],
     image: null,
     repo: "https://github.com/radiityy/online-shop",
     live: "https://online-shop-production-b2b5.up.railway.app/",
+  },
+  {
+    slug: "memoir",
+    title: "Memoir",
+    type: "Fullstack Web App",
+    subtitle: "Personal memory journal with photos and moods.",
+    description:
+      "A personal memory journal app where users can save moments with photos, captions, moods, locations, and revisit them through recap and on-this-day pages.",
+    details:
+      "Memoir is a fullstack web app built with Next.js, Supabase, Tailwind CSS, and Vercel. The app allows users to upload and store memories, add captions, moods, and locations, mark favorite moments, browse memories by date, and revisit past moments through recap and on-this-day features.",
+    stack: ["Next.js", "Supabase", "Tailwind CSS", "TypeScript", "Vercel"],
+    image: null,
+    repo: "https://github.com/radiityy/memoir-app",
+    live: "https://memoirdiary.vercel.app/",
   },
   {
     slug: "7kaih-journal",
@@ -24,7 +45,7 @@ export const projects = [
       "7KAIH Journal is a backend API project built with Laravel, Sanctum, MySQL, and Swagger. The API handles authentication, student check-ins, habit validation, and recap reports for students, teachers, and parents.",
     stack: ["Laravel", "Sanctum", "MySQL", "Swagger"],
     image: null,
-    repo: "https://github.com/fajrdyt/journal-7kaih",
+    repo: "https://github.com/radiityy/jurnal-7kaih",
     live: null,
   },
   {

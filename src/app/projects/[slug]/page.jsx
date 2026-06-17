@@ -18,10 +18,10 @@ export function generateMetadata({ params }) {
     };
   }
 
-  return {
-    title: `${project.title} | radiityy.`,
-    description: project.description,
-  };
+    return {
+      title: project.title,
+      description: project.description,
+    };
 }
 
 export default function ProjectDetailPage({ params }) {
@@ -122,7 +122,7 @@ export default function ProjectDetailPage({ params }) {
               </div>
 
               <p className="text-xs font-bold text-[#7a674f]">
-                Screenshot coming soon
+                Project Preview
               </p>
             </div>
           )}

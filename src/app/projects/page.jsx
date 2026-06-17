@@ -3,7 +3,7 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export const metadata = {
-  title: "Projects | radiityy.",
+  title: "Projects",
   description: "Selected projects by Raditya Adin Nugroho.",
 };
 
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
                     </div>
 
                     <p className="relative text-[11px] font-bold text-[#7a674f]">
-                      Screenshot coming soon
+                      Project Preview
                     </p>
                   </div>
                 )}

@@ -1,7 +1,7 @@
 import { techStack } from "@/data/techstack";
 
 export const metadata = {
-  title: "Stack | radiityy.",
+  title: "Stack",
   description: "Tech stack used by Raditya Adin Nugroho.",
 };
 

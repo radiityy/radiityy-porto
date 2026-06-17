@@ -10,7 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import { profile } from "@/data/profile";
 
 export const metadata = {
-  title: "Contact | radiityy.",
+  title: "Contact",
   description: "Contact Raditya Adin Nugroho.",
 };
 
