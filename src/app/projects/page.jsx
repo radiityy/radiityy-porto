@@ -8,24 +8,44 @@ export const metadata = {
 };
 
 function getProjectStatus(project) {
-  if (project.live) {
-    return {
-      label: "Live",
-      className: "border-[#bcd8c9] bg-[#edf8f1] text-[#477062]",
-    };
-  }
+  if (project.live) return "Live";
+  if (project.type.toLowerCase().includes("api")) return "API";
+  return "Source";
+}
 
-  if (project.type.toLowerCase().includes("api")) {
-    return {
-      label: "Backend API",
-      className: "border-[#d8c6a8] bg-[#fffaf2] text-[#7a674f]",
-    };
-  }
-
-  return {
-    label: "Source",
-    className: "border-[#dac5a6] bg-[#f3eadc] text-[#62533f]",
+function getProjectTheme(slug) {
+  const themes = {
+    neverending: {
+      accent: "bg-[#262017]",
+      soft: "bg-[#f3eadc]",
+      border: "border-[#d8c6a8]",
+      text: "text-[#262017]",
+      muted: "text-[#7a674f]",
+    },
+    memoir: {
+      accent: "bg-[#c77d67]",
+      soft: "bg-[#f8ece8]",
+      border: "border-[#e2c3b8]",
+      text: "text-[#3b2822]",
+      muted: "text-[#8a6254]",
+    },
+    "7kaih-journal": {
+      accent: "bg-[#53756c]",
+      soft: "bg-[#edf8f1]",
+      border: "border-[#bcd8c9]",
+      text: "text-[#263b34]",
+      muted: "text-[#477062]",
+    },
+    lynk: {
+      accent: "bg-[#4f6f8f]",
+      soft: "bg-[#eef3f8]",
+      border: "border-[#c8d6e2]",
+      text: "text-[#243342]",
+      muted: "text-[#5e7488]",
+    },
   };
+
+  return themes[slug] || themes.neverending;
 }
 
 export default function ProjectsPage() {
@@ -47,132 +67,129 @@ export default function ProjectsPage() {
         </h1>
 
         <p className="mt-5 max-w-2xl text-base leading-8 text-[#6d604f]">
-          A few web projects I&apos;ve worked on, from backend APIs to fullstack
-          applications.
+          A few things I&apos;ve built while learning backend, frontend, and
+          fullstack web development.
         </p>
       </section>
 
-      <section className="divide-y divide-[#e3d3bb] border-y border-[#e3d3bb]">
+      <section className="grid gap-6">
         {projects.map((project, index) => {
-          const status = getProjectStatus(project);
+          const theme = getProjectTheme(project.slug);
 
           return (
             <article
               key={project.slug}
-              className="group grid gap-6 py-8 transition md:grid-cols-[240px_1fr] md:items-center"
+              className={`group relative overflow-hidden rounded-[2.3rem] border ${theme.border} bg-[#fffaf2] shadow-[0_18px_60px_rgba(79,58,32,0.07)] transition hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(79,58,32,0.12)]`}
             >
-              <Link
-                href={`/projects/${project.slug}`}
-                className="block overflow-hidden rounded-[1.6rem] border border-[#dac5a6] bg-[#fffaf2] p-3 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#53756c] group-hover:shadow-[0_14px_35px_rgba(79,58,32,0.08)]"
-              >
-                {project.image ? (
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[1.2rem] bg-[#f3eadc]">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} screenshot`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 240px"
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                ) : (
-                  <div className="relative flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-[1.2rem] border border-[#e0ceb0] bg-[#f3eadc] p-4">
-                    <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#bcd8c9]/45 blur-xl" />
-                    <div className="absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-[#e7c892]/45 blur-xl" />
+              <div
+                className={`absolute -right-20 -top-20 h-56 w-56 rounded-full ${theme.soft} blur-3xl`}
+              />
+              <div
+                className={`absolute -bottom-24 -left-24 h-64 w-64 rounded-full ${theme.soft} blur-3xl`}
+              />
 
-                    <div className="relative flex items-center gap-1.5">
+              <div className="relative grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className={`relative block overflow-hidden border-b ${theme.border} bg-[#f8f3ea] p-3 md:border-b-0 md:border-r`}
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-[1.7rem] bg-[#f3eadc]">
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 48vw"
+                        className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center p-6 text-center">
+                        <p className="text-3xl font-black tracking-[-0.07em] text-[#262017]">
+                          {project.title}
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full border border-white/50 bg-white/80 px-3 py-2 backdrop-blur-md">
                       <span className="h-2 w-2 rounded-full bg-[#e96d5b]" />
                       <span className="h-2 w-2 rounded-full bg-[#e7b85d]" />
                       <span className="h-2 w-2 rounded-full bg-[#6fbf73]" />
                     </div>
 
-                    <div className="relative">
-                      <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#8b7658]">
-                        Preview
-                      </p>
-                      <h2 className="mt-1 text-2xl font-black tracking-[-0.06em] text-[#262017]">
-                        {project.title}
-                      </h2>
-                    </div>
-
-                    <p className="relative text-[11px] font-bold text-[#7a674f]">
-                      Project Preview
-                    </p>
-                  </div>
-                )}
-              </Link>
-
-              <div>
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-xs font-black text-[#53756c]">
-                    0{index + 1}
-                  </span>
-
-                  <span className="rounded-full border border-[#d7c3a3] bg-[#fffaf2] px-3 py-1 text-[11px] font-bold text-[#7a674f]">
-                    {project.type}
-                  </span>
-
-                  <span
-                    className={`rounded-full border px-3 py-1 text-[11px] font-black ${status.className}`}
-                  >
-                    {status.label}
-                  </span>
-                </div>
-
-                <Link href={`/projects/${project.slug}`} className="group/title">
-                  <h2 className="mt-3 inline-flex items-center gap-2 text-3xl font-black tracking-[-0.05em] text-[#262017] transition group-hover/title:text-[#53756c]">
-                    {project.title}
-                    <span className="translate-y-1 text-xl opacity-0 transition group-hover/title:translate-y-0 group-hover/title:opacity-100">
+                    <span
+                      className={`absolute bottom-4 right-4 rounded-full ${theme.accent} px-4 py-2 text-xs font-black text-white shadow-sm`}
+                    >
+                      {getProjectStatus(project)}
                     </span>
-                  </h2>
+                  </div>
                 </Link>
 
-                <p className="mt-2 text-sm font-bold text-[#53756c]">
-                  {project.subtitle}
-                </p>
-
-                <p className="mt-4 max-w-3xl text-sm leading-7 text-[#6d604f]">
-                  {project.description}
-                </p>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-[#d8c6a8] bg-[#fffaf2] px-3 py-1 text-[11px] font-bold text-[#7a674f]"
-                    >
-                      {item}
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className={`text-xs font-black ${theme.muted}`}>
+                      0{index + 1}
                     </span>
-                  ))}
-                </div>
 
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="rounded-full bg-[#262017] px-4 py-2 text-xs font-bold text-white transition hover:-translate-y-0.5"
-                  >
-                    View Detail
+                    <span className="rounded-full border border-[#d7c3a3] bg-[#f8f3ea] px-3 py-1 text-[11px] font-bold text-[#7a674f]">
+                      {project.type}
+                    </span>
+                  </div>
+
+                  <Link href={`/projects/${project.slug}`}>
+                    <h2
+                      className={`mt-5 text-[clamp(2.3rem,8vw,4.6rem)] font-black leading-[0.9] tracking-[-0.08em] ${theme.text} [overflow-wrap:anywhere] transition group-hover:text-[#53756c]`}
+                    >
+                      {project.title}
+                    </h2>
                   </Link>
 
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-[#cdb893] px-4 py-2 text-xs font-bold text-[#262017] transition hover:-translate-y-0.5 hover:bg-[#fffaf2]"
-                  >
-                    GitHub
-                  </a>
+                  <p className={`mt-4 text-sm font-black ${theme.muted}`}>
+                    {project.subtitle}
+                  </p>
 
-                  {project.live && (
+                  <p className="mt-5 text-sm leading-7 text-[#6d604f]">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.stack.slice(0, 5).map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-[#d8c6a8] bg-[#f8f3ea] px-3 py-1 text-[11px] font-bold text-[#7a674f]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="rounded-full bg-[#262017] px-5 py-3 text-xs font-bold text-white transition hover:-translate-y-0.5"
+                    >
+                      View Detail
+                    </Link>
+
                     <a
-                      href={project.live}
+                      href={project.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full border border-[#cdb893] px-4 py-2 text-xs font-bold text-[#262017] transition hover:-translate-y-0.5 hover:bg-[#fffaf2]"
+                      className="rounded-full border border-[#cdb893] px-5 py-3 text-xs font-bold text-[#262017] transition hover:-translate-y-0.5 hover:bg-[#f8f3ea]"
                     >
-                      Live Site
+                      GitHub
                     </a>
-                  )}
+
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full border border-[#cdb893] px-5 py-3 text-xs font-bold text-[#262017] transition hover:-translate-y-0.5 hover:bg-[#f8f3ea]"
+                      >
+                        Live Site
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </article>
