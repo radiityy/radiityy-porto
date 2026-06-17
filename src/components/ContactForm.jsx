@@ -34,7 +34,7 @@ export default function ContactForm() {
         const message =
           data?.errors?.[0]?.message ||
           data?.message ||
-          "Message failed. Check the form endpoint or try again.";
+          "Something went wrong, please try again in a moment.";
 
         throw new Error(message);
       }
@@ -118,7 +118,7 @@ export default function ContactForm() {
 
       {status === "success" && (
         <p className="mt-5 rounded-2xl border border-[#bcd8c9] bg-[#edf8f1] px-4 py-3 text-center text-sm font-black text-[#477062]">
-          Message sent. Thanks for reaching out.
+          Message sent, I’ll reply soon
         </p>
       )}
 
