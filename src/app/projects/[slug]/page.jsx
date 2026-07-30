@@ -43,7 +43,7 @@ function getProjectTheme(slug) {
       glow: "bg-[#e2c3b8]",
     },
     "7kaih-journal": {
-      accent: "bg-[#53756c]",
+      accent: "bg-[#b3672c]",
       soft: "bg-[#edf8f1]",
       border: "border-[#bcd8c9]",
       text: "text-[#263b34]",
@@ -178,7 +178,7 @@ export default function ProjectDetailPage({ params }) {
 
       <section className="mt-8 grid gap-4 md:grid-cols-3">
         <div className={`rounded-[1.8rem] border ${theme.border} ${theme.soft} p-5`}>
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#53756c]">
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#b3672c]">
             Category
           </p>
           <p className="mt-3 text-xl font-black tracking-[-0.05em] text-[#262017]">
@@ -187,7 +187,7 @@ export default function ProjectDetailPage({ params }) {
         </div>
 
         <div className={`rounded-[1.8rem] border ${theme.border} bg-[#fffaf2] p-5`}>
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#53756c]">
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#b3672c]">
             Stack
           </p>
           <p className="mt-3 text-xl font-black tracking-[-0.05em] text-[#262017]">
@@ -196,7 +196,7 @@ export default function ProjectDetailPage({ params }) {
         </div>
 
         <div className={`rounded-[1.8rem] border ${theme.border} ${theme.soft} p-5`}>
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#53756c]">
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#b3672c]">
             Status
           </p>
           <p className="mt-3 text-xl font-black tracking-[-0.05em] text-[#262017]">
@@ -207,7 +207,7 @@ export default function ProjectDetailPage({ params }) {
 
       <section className="mt-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#53756c]">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b3672c]">
             Overview
           </p>
 
@@ -243,7 +243,7 @@ export default function ProjectDetailPage({ params }) {
       <section className="mt-12 overflow-hidden rounded-[2rem] border border-[#dfcfb5] bg-[#fffaf2] p-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#53756c]">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b3672c]">
               Tech Stack
             </p>
 

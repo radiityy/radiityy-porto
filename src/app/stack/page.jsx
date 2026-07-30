@@ -21,7 +21,7 @@ export default function StackPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 py-12 pb-28 md:py-16">
       <section className="mb-12">
-        <p className="text-xs font-black uppercase tracking-[0.2em] text-[#53756c]">
+        <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b3672c]">
           Tech Stack
         </p>
 
@@ -68,7 +68,7 @@ export default function StackPage() {
                 <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-white/50 blur-xl" />
 
                 <div className="relative">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#d8c6a8] bg-[#fffaf2] text-2xl text-[#53756c] transition group-hover:rotate-[-6deg] group-hover:scale-105">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#d8c6a8] bg-[#fffaf2] text-2xl text-[#b3672c] transition group-hover:rotate-[-6deg] group-hover:scale-105">
                     <Icon />
                   </span>
 
@@ -93,7 +93,7 @@ export default function StackPage() {
             className="grid gap-6 border-t border-[#e3d3bb] pt-8 md:grid-cols-[220px_1fr]"
           >
             <div>
-              <span className="text-xs font-black text-[#53756c]">
+              <span className="text-xs font-black text-[#b3672c]">
                 0{index + 1}
               </span>
 
@@ -113,9 +113,9 @@ export default function StackPage() {
                 return (
                   <div
                     key={item.name}
-                    className="group flex items-center gap-3 rounded-2xl border border-[#dfcfb5] bg-[#fffaf2] px-4 py-4 text-[#262017] transition hover:-translate-y-1 hover:border-[#53756c] hover:bg-[#f8efe1] hover:shadow-[0_14px_35px_rgba(79,58,32,0.08)]"
+                    className="group flex items-center gap-3 rounded-2xl border border-[#dfcfb5] bg-[#fffaf2] px-4 py-4 text-[#262017] transition hover:-translate-y-1 hover:border-[#b3672c] hover:bg-[#f8efe1] hover:shadow-[0_14px_35px_rgba(79,58,32,0.08)]"
                   >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#e3d3bb] bg-[#f8f3ea] text-xl text-[#53756c] transition group-hover:rotate-[-4deg] group-hover:scale-105 group-hover:bg-[#edf8f1]">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#e3d3bb] bg-[#f8f3ea] text-xl text-[#b3672c] transition group-hover:rotate-[-4deg] group-hover:scale-105 group-hover:bg-[#edf8f1]">
                       <Icon />
                     </span>
 

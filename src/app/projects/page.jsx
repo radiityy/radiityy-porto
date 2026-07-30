@@ -30,7 +30,7 @@ function getProjectTheme(slug) {
       muted: "text-[#8a6254]",
     },
     "7kaih-journal": {
-      accent: "bg-[#53756c]",
+      accent: "bg-[#b3672c]",
       soft: "bg-[#edf8f1]",
       border: "border-[#bcd8c9]",
       text: "text-[#263b34]",
@@ -53,7 +53,7 @@ export default function ProjectsPage() {
     <main className="mx-auto max-w-6xl px-5 py-12 pb-28 md:py-16">
       <section className="mb-12">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#53756c]">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b3672c]">
             Selected Projects
           </p>
 
@@ -137,7 +137,7 @@ export default function ProjectsPage() {
 
                   <Link href={`/projects/${project.slug}`}>
                     <h2
-                      className={`mt-5 text-[clamp(2.3rem,8vw,4.6rem)] font-black leading-[0.9] tracking-[-0.08em] ${theme.text} [overflow-wrap:anywhere] transition group-hover:text-[#53756c]`}
+                      className={`mt-5 text-[clamp(2.3rem,8vw,4.6rem)] font-black leading-[0.9] tracking-[-0.08em] ${theme.text} [overflow-wrap:anywhere] transition group-hover:text-[#b3672c]`}
                     >
                       {project.title}
                     </h2>
