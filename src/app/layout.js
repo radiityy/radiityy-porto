@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import IntroScreen from "@/components/IntroScreen";
 
 export const metadata = {
   title: {
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <IntroScreen />
         <Navbar />
         {children}
       </body>

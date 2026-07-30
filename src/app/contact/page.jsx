@@ -21,25 +21,31 @@ export default function ContactPage() {
       value: `@${profile.handle}`,
       href: profile.github,
       icon: FaGithub,
+      bg: "#262017",
+      fg: "#ffffff",
     },
     {
       label: "Instagram",
       value: "Say hi there",
       href: profile.instagram,
       icon: FaInstagram,
+      bg: "#fde3ef",
+      fg: "#c2277a",
     },
     {
       label: "LinkedIn",
       value: "Connect with me",
       href: profile.linkedin,
       icon: FaLinkedinIn,
+      bg: "#dbeafe",
+      fg: "#0a66c2",
     },
   ].filter((item) => item.href && item.href !== "#");
 
   return (
     <main className="mx-auto max-w-6xl px-5 py-12 pb-28 md:py-16">
       <section className="mb-12">
-        <p className="text-xs font-black uppercase tracking-[0.2em] text-[#53756c]">
+        <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b3672c]">
           Contact
         </p>
 
@@ -59,7 +65,7 @@ export default function ContactPage() {
               Find me on
             </p>
 
-            <div className="mt-5 space-y-3">
+            <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3 md:grid-cols-1">
               {links.map((link) => {
                 const Icon = link.icon;
 
@@ -69,22 +75,26 @@ export default function ContactPage() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 rounded-2xl border border-[#e3d3bb] bg-[#f8f3ea] p-4 transition hover:-translate-y-1 hover:border-[#53756c] hover:bg-[#edf8f1]"
+                    style={{ backgroundColor: link.bg, color: link.fg }}
+                    className="group flex items-center gap-4 rounded-2xl p-4 transition hover:-translate-y-1"
                   >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#d8c6a8] bg-[#fffaf2] text-xl text-[#53756c] transition group-hover:rotate-[-5deg] group-hover:scale-105">
+                    <span
+                      style={{ color: link.fg }}
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/25 text-xl transition group-hover:rotate-[-5deg] group-hover:scale-105"
+                    >
                       <Icon />
                     </span>
 
                     <span className="min-w-0 flex-1">
-                      <span className="block text-sm font-black text-[#262017]">
+                      <span className="block text-sm font-black">
                         {link.label}
                       </span>
-                      <span className="mt-1 block truncate text-sm text-[#6d604f]">
+                      <span className="mt-1 block truncate text-sm opacity-80">
                         {link.value}
                       </span>
                     </span>
 
-                    <FaArrowRight className="text-sm text-[#53756c] transition group-hover:translate-x-1" />
+                    <FaArrowRight className="text-sm opacity-70 transition group-hover:translate-x-1" />
                   </a>
                 );
               })}
@@ -95,7 +105,7 @@ export default function ContactPage() {
             <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#bcd8c9]/70 blur-xl" />
 
             <div className="relative">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#bcd8c9] bg-[#fffaf2] text-[#53756c]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#bcd8c9] bg-[#fffaf2] text-[#b3672c]">
                 <FaMapMarkerAlt />
               </div>
 

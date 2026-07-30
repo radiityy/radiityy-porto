@@ -6,8 +6,10 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/stack", label: "Stack" },
+  { href: "/dashboard", label: "Dashboard" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -54,7 +56,7 @@ export default function Navbar() {
               isScrolled ? "text-lg" : "text-xl"
             }`}
           >
-            radiityy<span className="text-[#53756c]">.</span>
+            radiityy<span className="text-[#b3672c]">.</span>
           </Link>
 
           <nav
