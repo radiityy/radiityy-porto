@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
+import TechMarquee from "@/components/TechMarquee";
 
 export const metadata = {
   title: {
@@ -97,7 +98,7 @@ export default function Home() {
             <div className="p-4 sm:p-5">
               <Link
                 href={`/projects/${featured.slug}`}
-                className="group block overflow-hidden rounded-[1.5rem] border border-[#d8c6a8] bg-[#f3eadc] shadow-[0_12px_35px_rgba(79,58,32,0.08)] transition hover:-translate-y-1 hover:border-[#53756c]"
+                className="group block overflow-hidden rounded-[1.5rem] border border-[#d8c6a8] bg-[#f3eadc] shadow-[0_12px_35px_rgba(79,58,32,0.08)] transition hover:-translate-y-1 hover:border-[#b3672c]"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
                   {featured.image ? (
@@ -134,7 +135,7 @@ export default function Home() {
                 </p>
 
                 <Link href={`/projects/${featured.slug}`}>
-                  <h2 className="mt-2 text-4xl font-black leading-none tracking-[-0.07em] text-[#262017] [overflow-wrap:anywhere] transition hover:text-[#53756c] md:text-5xl">
+                  <h2 className="mt-2 text-4xl font-black leading-none tracking-[-0.07em] text-[#262017] [overflow-wrap:anywhere] transition hover:text-[#b3672c] md:text-5xl">
                     {featured.title}
                   </h2>
                 </Link>
@@ -186,6 +187,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="mt-2">
+        <TechMarquee />
       </section>
     </main>
   );
